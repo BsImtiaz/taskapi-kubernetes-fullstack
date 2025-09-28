@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Task-1.-Java-backend-and-REST-API-example.
 This project is a Task Management REST API built using Java and Spring Boot. It demonstrates how to create, read, search, execute, and delete tasks using RESTful endpoints. All data is stored in-memory for demonstration purposes, and the API is tested using Postman.
 
@@ -25,3 +26,7 @@ GET	            /tasks?id={id}	                    Get task by ID
 GET	      /tasks/search?name={substring}	          Search tasks by name
 PUT       	/tasks/{id}/executions                	Execute a task
 DELETE	        /tasks/{id}	                        Delete a task
+=======
+# taskapi-kubernetes-fullstack
+The Java REST API was containerized and deployed on Kubernetes with MongoDB (using persistent storage). Application and database run in separate pods, exposed via a Service. The TaskExecution endpoint was modified to create a temporary BusyBox pod through the Kubernetes API to run commands dynamically.
+>>>>>>> 50f4e0f524b5042340860b54ddf831128e7e4395
