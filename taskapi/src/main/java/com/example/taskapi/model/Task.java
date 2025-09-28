@@ -1,18 +1,22 @@
 package com.example.taskapi.model;
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-
+import jakarta.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Document(collection = "tasks")
+@Entity
+@Table(name = "tasks")
 public class Task {
     @Id
     private String id;
     private String name;
     private String owner;
+    
+    @Column(columnDefinition = "TEXT")
     private String command;
+    
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "task_id")
     private List<TaskExecution> taskExecutions = new ArrayList<>();
 
     public Task() {}
